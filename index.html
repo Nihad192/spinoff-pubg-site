@@ -55,6 +55,10 @@
       border-radius: 5px;
       display: inline-block;
       transition: background-color 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      margin-left: 5px;
     }
     .btn:hover {
       background: #218838;
@@ -69,6 +73,12 @@
     footer a {
       color: #007bff;
       text-decoration: underline;
+    }
+    select {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -97,31 +107,76 @@
         <td>60 UC</td>
         <td>2 ₼</td>
         <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%2060%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td>
+          <select id="quantity60" name="quantity60">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button class="btn" onclick="sendWhatsapp('60')">Sifariş et</button>
+        </td>
       </tr>
       <tr>
         <td>170 UC</td>
         <td>4 ₼</td>
         <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20170%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td>
+          <select id="quantity170" name="quantity170">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button class="btn" onclick="sendWhatsapp('170')">Sifariş et</button>
+        </td>
       </tr>
       <tr>
         <td>325+25 UC</td>
         <td>9 ₼</td>
         <td>🎁 25 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20325%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td>
+          <select id="quantity325" name="quantity325">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button class="btn" onclick="sendWhatsapp('325')">Sifariş et</button>
+        </td>
       </tr>
       <tr>
         <td>660+60 UC</td>
         <td>17 ₼</td>
         <td>🎁 60 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20660%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td>
+          <select id="quantity660" name="quantity660">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button class="btn" onclick="sendWhatsapp('660')">Sifariş et</button>
+        </td>
       </tr>
       <tr>
         <td>1200+180 UC</td>
         <td>29 ₼</td>
         <td>🎁 180 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%201200%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td>
+          <select id="quantity1200" name="quantity1200">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button class="btn" onclick="sendWhatsapp('1200')">Sifariş et</button>
+        </td>
       </tr>
     </table>
   </div>
@@ -147,6 +202,14 @@
       s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
       var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
+
+    function sendWhatsapp(paket) {
+      const number = "994555166347"; // WhatsApp nömrən
+      const quantity = document.getElementById(`quantity${paket}`).value;
+      const message = `Salam! Mən ${quantity} ədəd ${paket} UC paket sifariş etmək istəyirəm. ID: `; // ID hissəsini istifadəçi əlavə edə bilər
+      const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
   </script>
 </body>
-</html>
+  </html>
