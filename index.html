@@ -20,38 +20,16 @@
       margin: 0;
       padding: 0;
       color: #333;
-      min-height: 100vh;
-      position: relative;
-      padding-top: 60px;
     }
     header {
       background-color: #111;
       color: #fff;
       padding: 20px;
       text-align: center;
-      position: relative;
     }
     h1 {
       margin: 0;
       font-size: 28px;
-    }
-    /* Qeydiyyat düyməsi */
-    #signupBtn {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1001;
-      transition: background-color 0.3s ease;
-    }
-    #signupBtn:hover {
-      background-color: #218838;
     }
     .section {
       padding: 20px;
@@ -87,92 +65,55 @@
       text-align: center;
       font-size: 14px;
       color: #555;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      margin-top: 40px;
     }
     footer a {
       color: #007bff;
       text-decoration: underline;
     }
 
-    /* Modal stili */
+    /* Qeydiyyat modal üçün */
     #modalOverlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.6);
       display: none;
-      align-items: center;
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
       justify-content: center;
+      align-items: center;
       z-index: 1000;
     }
-    #modalContent {
+    #modalOverlay.active {
+      display: flex;
+    }
+    #signupModal {
       background: white;
-      padding: 30px 20px;
+      padding: 20px;
       border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      position: relative;
+      width: 300px;
     }
-    #modalContent h2 {
-      margin-top: 0;
-      text-align: center;
+    #formMessage {
+      margin-top: 10px;
+      font-weight: bold;
     }
-    #modalContent input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    #modalContent button {
-      width: 100%;
-      padding: 12px;
+    #signupBtn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
       background: #28a745;
       color: white;
       border: none;
+      padding: 10px 15px;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      z-index: 1001;
     }
-    #modalContent button:hover {
-      background: #218838;
-    }
-    #modalClose {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #999;
-      cursor: pointer;
-    }
-    #modalClose:hover {
-      color: #333;
-    }
-
-    /* Shəxsi kabinet mesajı */
     #welcomeMsg {
       position: fixed;
       top: 15px;
-      right: 150px;
-      background: #28a745;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
+      right: 110px;
       font-weight: bold;
-      display: none;
+      color: #333;
       z-index: 1001;
     }
-
   </style>
 </head>
 <body>
@@ -180,9 +121,6 @@
     <h1>🎮 SpinOff</h1>
     <p>Ən sərfəli PUBG Mobile UC paketləri</p>
   </header>
-
-  <button id="signupBtn">Qeydiyyat</button>
-  <div id="welcomeMsg"></div>
 
   <!-- Reklam Panosu -->
   <div class="section" style="text-align:center;">
@@ -240,89 +178,24 @@
     </p>
   </footer>
 
-  <!-- Modal (Qeydiyyat Formu) -->
+  <!-- Qeydiyyat düyməsi və mesaj -->
+  <button id="signupBtn">Qeydiyyat</button>
+  <div id="welcomeMsg" style="display:none;"></div>
+
+  <!-- Qeydiyyat modalı -->
   <div id="modalOverlay">
-    <div id="modalContent">
-      <span id="modalClose">&times;</span>
-      <h2>Qeydiyyat</h2>
+    <div id="signupModal">
+      <h2>Qeydiyyatdan keç</h2>
       <form id="signupForm">
-        <input type="text" name="name" placeholder="Adınız" required />
-        <input type="tel" name="phone" placeholder="Telefon nömrəniz" required />
-        <input type="email" name="email" placeholder="Email ünvanınız" required />
-        <button type="submit">Qeydiyyatdan keç</button>
+        <label for="name">Adınız:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <div id="formMessage"></div>
+        <br />
+        <button type="submit">Qeydiyyat</button>
+        <button type="button" id="closeModal">Bağla</button>
       </form>
-      <div id="formMessage" style="margin-top: 10px; text-align:center; color:green;"></div>
     </div>
   </div>
-
-  <script>
-    // Modal elementləri
-    const signupBtn = document.getElementById('signupBtn');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalClose = document.getElementById('modalClose');
-    const signupForm = document.getElementById('signupForm');
-    const formMessage = document.getElementById('formMessage');
-    const welcomeMsg = document.getElementById('welcomeMsg');
-
-    // Modal aç
-    signupBtn.addEventListener('click', () => {
-      modalOverlay.style.display = 'flex';
-      formMessage.textContent = '';
-    });
-
-    // Modal bağla
-    modalClose.addEventListener('click', () => {
-      modalOverlay.style.display = 'none';
-    });
-
-    // Modal pəncərə xaricinə kliklə bağla
-    window.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) {
-        modalOverlay.style.display = 'none';
-      }
-    });
-
-    // Form göndərilməsi
-    signupForm.addEventListener('submit', e => {
-      e.preventDefault();
-
-      const formData = new FormData(signupForm);
-      const name = formData.get('name').trim();
-      const phone = formData.get('phone').trim();
-      const email = formData.get('email').trim();
-
-      if (!name || !phone || !email) {
-        formMessage.style.color = 'red';
-        formMessage.textContent = 'Zəhmət olmasa bütün sahələri doldurun.';
-        return;
-      }
-
-      fetch('https://script.google.com/macros/s/AKfycbzYflN9fe42qE86Fsmgdn2hF9t0t8wbOX3gP42lM8Gu-68AiPvNDdSNU-t5WylV5Yu-_Q/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ name, phone, email })
-      })
-      .then(response => response.text())
-      .then(data => {
-        formMessage.style.color = 'green';
-        formMessage.textContent = "✅ Uğurla qeydiyyatdan keçdiniz!";
-        signupForm.reset();
-        modalOverlay.style.display = 'none';
-
-        // Şəxsi kabinetə xoş gəldiniz mesajı göstər
-        welcomeMsg.textContent = `Xoş gəlmisiniz, ${name}!`;
-        welcomeMsg.style.display = 'block';
-
-        // Qeydiyyat düyməsini gizlət
-        signupBtn.style.display = 'none';
-      })
-      .catch(err => {
-        formMessage.style.color = 'red';
-        formMessage.textContent = '❌ Xəta baş verdi. Yenidən cəhd edin.';
-        console.error(err);
-      });
-    });
-  </script>
 
   <!-- Canlı Chat (WhatsApp Widget) -->
   <script>
@@ -338,5 +211,85 @@
       var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
   </script>
+
+  <script>
+    const signupBtn = document.getElementById('signupBtn');
+    const welcomeMsg = document.getElementById('welcomeMsg');
+    const signupForm = document.getElementById('signupForm');
+    const formMessage = document.getElementById('formMessage');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    let logoutBtn;
+
+    function showUser() {
+      const userName = localStorage.getItem('userName');
+      if(userName) {
+        welcomeMsg.textContent = `Xoş gəlmisiniz, ${userName}!`;
+        welcomeMsg.style.display = 'block';
+        signupBtn.style.display = 'none';
+
+        if(!logoutBtn) {
+          logoutBtn = document.createElement('button');
+          logoutBtn.textContent = 'Çıxış';
+          logoutBtn.style.position = 'fixed';
+          logoutBtn.style.top = '15px';
+          logoutBtn.style.right = '210px';
+          logoutBtn.style.backgroundColor = '#dc3545';
+          logoutBtn.style.color = 'white';
+          logoutBtn.style.border = 'none';
+          logoutBtn.style.padding = '10px 15px';
+          logoutBtn.style.borderRadius = '5px';
+          logoutBtn.style.cursor = 'pointer';
+          logoutBtn.style.zIndex = '1001';
+          logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('userName');
+            location.reload();
+          });
+          document.body.appendChild(logoutBtn);
+        } else {
+          logoutBtn.style.display = 'block';
+        }
+      } else {
+        welcomeMsg.style.display = 'none';
+        signupBtn.style.display = 'inline-block';
+        if(logoutBtn) logoutBtn.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('load', showUser);
+
+    signupBtn.addEventListener('click', () => {
+      modalOverlay.classList.add('active');
+      formMessage.textContent = '';
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.remove('active');
+    });
+
+    signupForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(signupForm);
+      const name = formData.get('name').trim();
+
+      if(!name) {
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Zəhmət olmasa adınızı yazın.';
+        return;
+      }
+
+      localStorage.setItem('userName', name);
+
+      formMessage.style.color = 'green';
+      formMessage.textContent = "✅ Uğurla qeydiyyatdan keçdiniz!";
+
+      signupForm.reset();
+      modalOverlay.classList.remove('active');
+
+      showUser();
+    });
+  </script>
+
 </body>
-  </html>
+</html>
