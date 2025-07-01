@@ -48,16 +48,18 @@
       background-color: #eee;
     }
     .btn {
-      background: #28a745;
-      color: white;
+      background: #ffc107; /* Sarı rəng */
+      color: #111;
       padding: 8px 12px;
       text-decoration: none;
       border-radius: 5px;
       display: inline-block;
       transition: background-color 0.3s ease;
+      font-weight: bold;
     }
     .btn:hover {
-      background: #218838;
+      background: #e0a800;
+      color: #000;
     }
     footer {
       background: #f0f0f0;
@@ -69,50 +71,6 @@
     footer a {
       color: #007bff;
       text-decoration: underline;
-    }
-
-    /* Qeydiyyat modal üçün */
-    #modalOverlay {
-      display: none;
-      position: fixed;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    #modalOverlay.active {
-      display: flex;
-    }
-    #signupModal {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-    }
-    #formMessage {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    #signupBtn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    #welcomeMsg {
-      position: fixed;
-      top: 15px;
-      right: 110px;
-      font-weight: bold;
-      color: #333;
-      z-index: 1001;
     }
   </style>
 </head>
@@ -141,31 +99,31 @@
         <td>60 UC</td>
         <td>2 ₼</td>
         <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%2060%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%2060%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
       </tr>
       <tr>
         <td>170 UC</td>
         <td>4 ₼</td>
         <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20170%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20170%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
       </tr>
       <tr>
         <td>325+25 UC</td>
         <td>9 ₼</td>
         <td>🎁 25 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20325%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20325%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
       </tr>
       <tr>
         <td>660+60 UC</td>
         <td>17 ₼</td>
         <td>🎁 60 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20660%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20660%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
       </tr>
       <tr>
         <td>1200+180 UC</td>
         <td>29 ₼</td>
         <td>🎁 180 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%201200%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank">Sifariş et</a></td>
+        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%201200%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
       </tr>
     </table>
   </div>
@@ -173,29 +131,10 @@
   <footer>
     <p>🔒 Müştərilərin bütün hüquqları qorunur.</p>
     <p>Problem yaşadığınız halda, saytdakı <strong>Canlı Chat</strong> bölməsindəki
-      <a href="https://wa.me/994552333809" target="_blank">WhatsApp nömrəmizə</a> klikləyərək
+      <a href="https://wa.me/994552333809" target="_blank" rel="noopener noreferrer">WhatsApp nömrəmizə</a> klikləyərək
       yaranan xətanın <strong>ekran görüntüsünü</strong> bizə göndərin. ❗
     </p>
   </footer>
-
-  <!-- Qeydiyyat düyməsi və mesaj -->
-  <button id="signupBtn">Qeydiyyat</button>
-  <div id="welcomeMsg" style="display:none;"></div>
-
-  <!-- Qeydiyyat modalı -->
-  <div id="modalOverlay">
-    <div id="signupModal">
-      <h2>Qeydiyyatdan keç</h2>
-      <form id="signupForm">
-        <label for="name">Adınız:</label><br />
-        <input type="text" id="name" name="name" required /><br />
-        <div id="formMessage"></div>
-        <br />
-        <button type="submit">Qeydiyyat</button>
-        <button type="button" id="closeModal">Bağla</button>
-      </form>
-    </div>
-  </div>
 
   <!-- Canlı Chat (WhatsApp Widget) -->
   <script>
@@ -211,85 +150,5 @@
       var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
   </script>
-
-  <script>
-    const signupBtn = document.getElementById('signupBtn');
-    const welcomeMsg = document.getElementById('welcomeMsg');
-    const signupForm = document.getElementById('signupForm');
-    const formMessage = document.getElementById('formMessage');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    let logoutBtn;
-
-    function showUser() {
-      const userName = localStorage.getItem('userName');
-      if(userName) {
-        welcomeMsg.textContent = `Xoş gəlmisiniz, ${userName}!`;
-        welcomeMsg.style.display = 'block';
-        signupBtn.style.display = 'none';
-
-        if(!logoutBtn) {
-          logoutBtn = document.createElement('button');
-          logoutBtn.textContent = 'Çıxış';
-          logoutBtn.style.position = 'fixed';
-          logoutBtn.style.top = '15px';
-          logoutBtn.style.right = '210px';
-          logoutBtn.style.backgroundColor = '#dc3545';
-          logoutBtn.style.color = 'white';
-          logoutBtn.style.border = 'none';
-          logoutBtn.style.padding = '10px 15px';
-          logoutBtn.style.borderRadius = '5px';
-          logoutBtn.style.cursor = 'pointer';
-          logoutBtn.style.zIndex = '1001';
-          logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('userName');
-            location.reload();
-          });
-          document.body.appendChild(logoutBtn);
-        } else {
-          logoutBtn.style.display = 'block';
-        }
-      } else {
-        welcomeMsg.style.display = 'none';
-        signupBtn.style.display = 'inline-block';
-        if(logoutBtn) logoutBtn.style.display = 'none';
-      }
-    }
-
-    window.addEventListener('load', showUser);
-
-    signupBtn.addEventListener('click', () => {
-      modalOverlay.classList.add('active');
-      formMessage.textContent = '';
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      modalOverlay.classList.remove('active');
-    });
-
-    signupForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const formData = new FormData(signupForm);
-      const name = formData.get('name').trim();
-
-      if(!name) {
-        formMessage.style.color = 'red';
-        formMessage.textContent = 'Zəhmət olmasa adınızı yazın.';
-        return;
-      }
-
-      localStorage.setItem('userName', name);
-
-      formMessage.style.color = 'green';
-      formMessage.textContent = "✅ Uğurla qeydiyyatdan keçdiniz!";
-
-      signupForm.reset();
-      modalOverlay.classList.remove('active');
-
-      showUser();
-    });
-  </script>
-
 </body>
 </html>
