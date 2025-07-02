@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="az">
+<!DOCTYPE html><html lang="az">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,32 +33,40 @@
     .section {
       padding: 20px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
+    .package {
+      background-color: #e0f0ff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: center;
+    .package h3 {
+      margin: 0 0 10px;
     }
-    th {
-      background-color: #eee;
+    .package p {
+      margin: 5px 0;
+    }
+    .package input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin: 10px 0;
     }
     .btn {
-      background: #ffc107; /* Sarı rəng */
+      background: #ffc107;
       color: #111;
-      padding: 8px 12px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
     .btn:hover {
-      background: #e0a800;
-      color: #000;
+      background-color: #e0a800;
     }
     footer {
       background: #f0f0f0;
@@ -78,77 +85,60 @@
   <header>
     <h1>🎮 SpinOff</h1>
     <p>Ən sərfəli PUBG Mobile UC paketləri</p>
-  </header>
+  </header>  <div class="section">
+    <h2>💥 UC Paketləri</h2><div class="package">
+  <h3>60 UC</h3>
+  <p>Qiymət: 2 ₼</p>
+  <label for="qty60">Say:</label>
+  <input type="number" id="qty60" min="1" max="5" value="1">
+  <a class="btn" onclick="order('60 UC', document.getElementById('qty60').value)">Satın al</a>
+</div>
 
-  <!-- Reklam Panosu -->
-  <div class="section" style="text-align:center;">
-    <h2>📢 Reklam Panosu</h2>
-    <img src="images/quality_restoration_20250701132900238.jpg" alt="SpinOff Reklam Banneri" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" />
-  </div>
+<div class="package">
+  <h3>170 UC</h3>
+  <p>Qiymət: 4 ₼</p>
+  <label for="qty170">Say:</label>
+  <input type="number" id="qty170" min="1" max="5" value="1">
+  <a class="btn" onclick="order('170 UC', document.getElementById('qty170').value)">Satın al</a>
+</div>
 
-  <div class="section">
-    <h2>💥 UC Paketləri</h2>
-    <table>
-      <tr>
-        <th>Paket</th>
-        <th>Qiymət (AZN)</th>
-        <th>Bonus</th>
-        <th>Sifariş</th>
-      </tr>
-      <tr>
-        <td>60 UC</td>
-        <td>2 ₼</td>
-        <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%2060%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
-      </tr>
-      <tr>
-        <td>170 UC</td>
-        <td>4 ₼</td>
-        <td>-</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20170%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
-      </tr>
-      <tr>
-        <td>325+25 UC</td>
-        <td>9 ₼</td>
-        <td>🎁 25 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20325%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
-      </tr>
-      <tr>
-        <td>660+60 UC</td>
-        <td>17 ₼</td>
-        <td>🎁 60 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%20660%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
-      </tr>
-      <tr>
-        <td>1200+180 UC</td>
-        <td>29 ₼</td>
-        <td>🎁 180 UC</td>
-        <td><a class="btn" href="https://wa.me/994555166347?text=Salam!%20M%C9%99n%201200%20UC%20sifari%C5%9F%20etm%C9%99k%20ist%C9%99yir%C9%99m.%20ID%3A%20" target="_blank" rel="noopener noreferrer">Sifariş et</a></td>
-      </tr>
-    </table>
-  </div>
+<div class="package">
+  <h3>325+25 UC</h3>
+  <p>Qiymət: 9 ₼</p>
+  <p>🎁 Bonus: 25 UC</p>
+  <label for="qty325">Say:</label>
+  <input type="number" id="qty325" min="1" max="5" value="1">
+  <a class="btn" onclick="order('325+25 UC', document.getElementById('qty325').value)">Satın al</a>
+</div>
 
-  <footer>
+<div class="package">
+  <h3>660+60 UC</h3>
+  <p>Qiymət: 17 ₼</p>
+  <p>🎁 Bonus: 60 UC</p>
+  <label for="qty660">Say:</label>
+  <input type="number" id="qty660" min="1" max="5" value="1">
+  <a class="btn" onclick="order('660+60 UC', document.getElementById('qty660').value)">Satın al</a>
+</div>
+
+<div class="package">
+  <h3>1200+180 UC</h3>
+  <p>Qiymət: 29 ₼</p>
+  <p>🎁 Bonus: 180 UC</p>
+  <label for="qty1200">Say:</label>
+  <input type="number" id="qty1200" min="1" max="5" value="1">
+  <a class="btn" onclick="order('1200+180 UC', document.getElementById('qty1200').value)">Satın al</a>
+</div>
+
+  </div>  <footer>
     <p>🔒 Müştərilərin bütün hüquqları qorunur.</p>
     <p>Problem yaşadığınız halda, saytdakı <strong>Canlı Chat</strong> bölməsindəki
-      <a href="https://wa.me/994552333809" target="_blank" rel="noopener noreferrer">WhatsApp nömrəmizə</a> klikləyərək
+      <a href="https://wa.me/994552333809" target="_blank">WhatsApp nömrəmizə</a> klikləyərək
       yaranan xətanın <strong>ekran görüntüsünü</strong> bizə göndərin. ❗
     </p>
-  </footer>
-
-  <!-- Canlı Chat (WhatsApp Widget) -->
-  <script>
-    (function () {
-      var options = {
-        whatsapp: "994552333809", // Canlı Chat nömrəsi
-        call_to_action: "💬 Sualın var? Yaz!",
-        position: "right",
-      };
-      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-  </script>
-</body>
+  </footer>  <script>
+    function order(product, qty) {
+      const url = `https://wa.me/994555166347?text=Salam! Mən ${qty} ədəd ${product} sifariş etmək istəyirəm. ID:`;
+      window.open(url, '_blank');
+    }
+  </script></body>
 </html>
