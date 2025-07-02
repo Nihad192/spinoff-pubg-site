@@ -9,8 +9,11 @@
   <meta name="keywords" content="PUBG UC, ucuz PUBG UC, PUBG mobil üçün UC, WhatsApp ilə UC sifarişi, SpinOff, uc al" />
   <meta name="author" content="SpinOff Team" />
   <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Google Search Console Verification -->
   <meta name="google-site-verification" content="GbLq7zQZ6TcC8mOrTcS_wBBEZECLfmEb3xr8BQAZiAk" />
 
+  <!-- Open Graph tags -->
   <meta property="og:title" content="SpinOff - PUBG UC Satışı" />
   <meta property="og:description" content="Ucuz PUBG UC paketləri, etibarlı və sürətli xidmət. WhatsApp ilə dərhal sifariş edin." />
   <meta property="og:url" content="https://nihad192.github.io/spinoff-pubg-site/" />
@@ -34,6 +37,21 @@
     h1 {
       margin: 0;
       font-size: 28px;
+    }
+    nav {
+      background-color: #222;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #ffc107;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #e0a800;
     }
     .section {
       padding: 20px;
@@ -77,11 +95,6 @@
       color: #007bff;
       text-decoration: underline;
     }
-    /* Blog link düyməsi */
-    .blog-link {
-      text-align: center;
-      margin: 30px 0;
-    }
   </style>
 </head>
 <body>
@@ -91,13 +104,19 @@
     <p>Ən sərfəli PUBG Mobile UC paketləri</p>
   </header>
 
-  <!-- Reklam Panosu -->
+  <!-- Naviqasiya Menyu -->
+  <nav>
+    <a href="index.html">Əsas Səhifə</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
+
+  <!-- ✅ Reklam Panosu -->
   <div class="section" style="text-align:center;">
     <h2>📢 Reklam Panosu</h2>
     <img src="images/quality_restoration_20250701132900238.jpg" alt="SpinOff Reklam Banneri" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" />
   </div>
 
-  <!-- UC Paketləri -->
+  <!-- ✅ UC Paketləri -->
   <div class="section">
     <h2>💥 UC Paketləri</h2>
 
@@ -107,7 +126,7 @@
         <select id="qty1">
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         </select>
-      </label><br>
+      </label><br />
       <a class="btn" onclick="orderNow('60 UC', 1)">Satın al</a>
     </div>
 
@@ -117,7 +136,7 @@
         <select id="qty2">
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         </select>
-      </label><br>
+      </label><br />
       <a class="btn" onclick="orderNow('170 UC', 2)">Satın al</a>
     </div>
 
@@ -127,7 +146,7 @@
         <select id="qty3">
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         </select>
-      </label><br>
+      </label><br />
       <a class="btn" onclick="orderNow('325+25 UC', 3)">Satın al</a>
     </div>
 
@@ -137,7 +156,7 @@
         <select id="qty4">
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         </select>
-      </label><br>
+      </label><br />
       <a class="btn" onclick="orderNow('660+60 UC', 4)">Satın al</a>
     </div>
 
@@ -147,14 +166,9 @@
         <select id="qty5">
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         </select>
-      </label><br>
+      </label><br />
       <a class="btn" onclick="orderNow('1200+180 UC', 5)">Satın al</a>
     </div>
-  </div>
-
-  <!-- Bloga keçid düyməsi -->
-  <div class="blog-link">
-    <a class="btn" href="blog/index.html">📚 Bloga bax</a>
   </div>
 
   <footer>
@@ -165,7 +179,7 @@
     </p>
   </footer>
 
-  <!-- WhatsApp Mesaj Scripti -->
+  <!-- ✅ WhatsApp Mesaj Scripti -->
   <script>
     function orderNow(packageName, id) {
       const qty = document.getElementById('qty' + id).value;
@@ -175,7 +189,7 @@
     }
   </script>
 
-  <!-- Canlı Chat (WhatsApp Widget) -->
+  <!-- ✅ Canlı Chat (WhatsApp Widget) -->
   <script>
     (function () {
       var options = {
