@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nihad192.github.io/spinoff-pubg-site/sitemap.xml
